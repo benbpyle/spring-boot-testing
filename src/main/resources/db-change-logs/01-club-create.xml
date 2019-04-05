@@ -1,0 +1,19 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd"
+        logicalFilePath="01-club-create.xml">
+
+    <changeSet id="01" author="Ben Pyle">
+        <createTable tableName="clubs">
+            <column autoIncrement="false" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="club_id_PK"/>
+            </column>
+            <column name="loft" type="REAL" />
+            <column name="number" type="INTEGER"/>
+            <column name="brand" type="VARCHAR(255)" />
+            <column name="updated_datetime" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="created_datetime" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
