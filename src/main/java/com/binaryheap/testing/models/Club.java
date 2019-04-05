@@ -7,11 +7,11 @@ import javax.persistence.*;
 @Entity
 @Table(name = "clubs")
 @SequenceGenerator(name = "club_id_seq", allocationSize = 1)
-public class Club {
+public class Club extends GolfEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "club_id_seq")
     private long id;
-    
+
     @NonNull
     private String brand;
 
@@ -25,7 +25,7 @@ public class Club {
     @JoinColumn(name = "bag_id", nullable = false)
     private Bag bag;
 
-
+    // region getters and setters
     public long getId() {
         return id;
     }
@@ -57,4 +57,13 @@ public class Club {
     public void setNumber(int number) {
         this.number = number;
     }
+
+    public Bag getBag() {
+        return bag;
+    }
+
+    public void setBag(Bag bag) {
+        this.bag = bag;
+    }
+    // endregion
 }
