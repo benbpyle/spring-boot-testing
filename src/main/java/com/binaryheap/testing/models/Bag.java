@@ -1,5 +1,7 @@
 package com.binaryheap.testing.models;
 
+import com.binaryheap.testing.events.ClubAddedEvent;
+import com.binaryheap.testing.events.IntegrationEvent;
 import com.binaryheap.testing.exceptions.ClubExistsException;
 
 import javax.persistence.*;
@@ -54,5 +56,9 @@ public class Bag extends GolfEntity {
 
         club.setBag(this);
         clubs.add(club);
+
+        IntegrationEvent event = new IntegrationEvent();
+        event.setDetail(ClubAddedEvent.from(club));
+        addIntegrationEvent(event);
     }
 }
