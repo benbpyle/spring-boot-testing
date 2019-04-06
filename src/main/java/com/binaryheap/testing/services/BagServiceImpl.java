@@ -12,7 +12,7 @@ public class BagServiceImpl implements BagService {
     private final BagRepository bagRepository;
     private final BagMapper bagMapper;
 
-    private BagServiceImpl(BagRepository bagRepository, BagMapper bagMapper) {
+    public BagServiceImpl(BagRepository bagRepository, BagMapper bagMapper) {
         this.bagRepository = bagRepository;
         this.bagMapper = bagMapper;
     }

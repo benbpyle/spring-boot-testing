@@ -7,6 +7,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.Column;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class GolfEntity {
@@ -33,7 +34,7 @@ public class GolfEntity {
     }
 
     public List<IntegrationEvent> getIntegrationEvents() {
-        return integrationEvents;
+        return Collections.unmodifiableList(this.integrationEvents);
     }
 
     public LocalDateTime getCreateDateTime() {
