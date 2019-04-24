@@ -54,4 +54,12 @@ public class BagTests {
         // assert
         assertEquals(1, bag.getIntegrationEvents().size());
     }
+
+    @Test
+    public void sonar_test() {
+        Bag bag = new Bag();
+        bag.setId(1L);
+
+        assertEquals(1L, bag.getId());
+    }
 }
